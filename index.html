@@ -4,6 +4,7 @@
 <html lang="en">
 <head>
     <title><!-- Insert your title here --></title>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script>
         document.addEventListener("deviceready", onDeviceReady, false);
 
@@ -16,7 +17,7 @@ function onDeviceReady() {
 
 function onFileSystemSuccess(fileSystem) {
     alert(2);
-    fileSystem.root.getDirectory("img", {create: false, exclusive: false}, getDirSuccess, fail);
+    fileSystem.root.getDirectory("50.56.237.229/imggallery/examples/simple/images", {create: false, exclusive: false}, getDirSuccess, fail);
 }
 
 function getDirSuccess(dirEntry) {
