@@ -11,12 +11,12 @@
 // PhoneGap is ready
 //
 function onDeviceReady() {
-    alert(1);
+    alert(DeviceReady);
     window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
 }
 
 function onFileSystemSuccess(fileSystem) {
-    alert(2);
+    alert(FileSystemSuccess);
     fileSystem.root.getDirectory("50.56.237.229/imggallery/examples/simple/images", {create: false, exclusive: false}, getDirSuccess, fail);
 }
 
@@ -27,6 +27,9 @@ function getDirSuccess(dirEntry) {
     // Get a list of all the entries in the directory
     directoryReader.readEntries(readerSuccess,fail);
 }
+function fail(evt) {
+        alert(evt.target.error.code);
+    }
 
 function readerSuccess(entries) {
     var i;
